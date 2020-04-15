@@ -3,51 +3,72 @@ import 'package:flutter_demo/despicable_me/detail.dart';
 import 'package:flutter_demo/despicable_me/style_guide.dart';
 
 class CharacterWidget extends StatelessWidget {
+
+  int index;
+  PageController pageController;
+  int currentPage;
+  CharacterWidget({this.index,this.pageController,this.currentPage});
+
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     return InkWell(
+      radius: 0,
+      highlightColor: Colors.transparent,
       onTap: (){
-        Navigator.push(context, PageRouteBuilder(
-          transitionDuration: Duration(microseconds: 350),
-          pageBuilder: (context,_,__) => CharacterDetail()
-        ));
+          print(pageController);
+        // Navigator.push(context,MaterialPageRoute(builder: (context) => CharacterDetail(index)));
       },
-      child: Stack(
-        children: <Widget>[
-          Align(
-            alignment: Alignment.center,
-            child:ClipPath(
-              clipper: CharacterCardClipper(),
-              child:Container(
-                height:screenHeight * 0.6 ,
-                width: 0.4 * screenHeight,
-                decoration: BoxDecoration(
-                  gradient:LinearGradient(
-                    colors: [Colors.orange.shade200,Colors.orange.shade900],
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft
-                  )
-                ),
+      child: AnimatedBuilder(
+        animation: pageController,
+        builder: (context,child) {
+          double value = 1;
+          if(pageController.position.haveDimensions){
+            value = pageController.page - currentPage;
+            value = (1 - (value.abs() * 0.6)).clamp(0,1);
+          }
+          print(value);
+          return child;
+        },
+        child: Stack(
+          children: <Widget>[
+            Align(
+              alignment: Alignment.center,
+              child:ClipPath(
+                clipper: CharacterCardClipper(),
+                child:Hero(
+                  tag: 'character',
+                  child: Container(
+                    height:screenHeight * 0.6 ,
+                    width: 0.4 * screenHeight,
+                    decoration: BoxDecoration(
+                      gradient:LinearGradient(
+                        colors: [Colors.orange.shade200,Colors.orange.shade900],
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft
+                      )
+                    ),
+                  ),
+                )
+              )
+            ),
+            Align(
+              alignment:Alignment.topCenter,
+              child:Image.asset(index == 1 ? 'assets/images/Kevin_minions.png':'assets/images/Agnes_gru.png',height: screenHeight * 0.55,)
+            ),
+            Container(
+              margin: EdgeInsets.only(left:100,bottom:100),
+              child:Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(index == 1 ? 'Hanson':'Jahn',style: AppTheme.heading,),
+                  Text('集美们 Click to read more',style: AppTheme.subHeading,)
+                ],          
               )
             )
-          ),
-          Align(
-            alignment:Alignment.topCenter,
-            child:Image.asset('assets/images/Kevin_minions.png',height: screenHeight * 0.55,)
-          ),
-          Container(
-            margin: EdgeInsets.only(left:100,bottom:100),
-            child:Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text('Hanson',style: AppTheme.heading,),
-                Text('集美们 Click to read more',style: AppTheme.subHeading,)
-              ],          
-            )
-          )
-        ],
+          ],
+        ),
       ),
     );
   }

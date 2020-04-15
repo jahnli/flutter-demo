@@ -52,6 +52,10 @@ class _CharacterDetailState extends State<CharacterDetail> {
                     ]
                   ),
                 ),
+              ),
+              Positioned(
+                child:,
+                bottom:0
               )
             ]
           ),

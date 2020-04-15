@@ -12,63 +12,61 @@ class CharacterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
+    double _value = 1;
     return InkWell(
       radius: 0,
       highlightColor: Colors.transparent,
       onTap: (){
-          print(pageController);
-        // Navigator.push(context,MaterialPageRoute(builder: (context) => CharacterDetail(index)));
+        Navigator.push(context,MaterialPageRoute(builder: (context) => CharacterDetail(index)));
       },
       child: AnimatedBuilder(
         animation: pageController,
         builder: (context,child) {
-          double value = 1;
           if(pageController.position.haveDimensions){
-            value = pageController.page - currentPage;
-            value = (1 - (value.abs() * 0.6)).clamp(0,1);
+            _value = pageController.page - currentPage;
+            _value = (1 - (_value.abs() * 0.6)).clamp(0,1);
           }
-          print(value);
-          return child;
-        },
-        child: Stack(
-          children: <Widget>[
-            Align(
-              alignment: Alignment.center,
-              child:ClipPath(
-                clipper: CharacterCardClipper(),
-                child:Hero(
-                  tag: 'character',
-                  child: Container(
-                    height:screenHeight * 0.6 ,
-                    width: 0.4 * screenHeight,
-                    decoration: BoxDecoration(
-                      gradient:LinearGradient(
-                        colors: [Colors.orange.shade200,Colors.orange.shade900],
-                        begin: Alignment.topRight,
-                        end: Alignment.bottomLeft
-                      )
+          return Stack(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.center,
+                child:ClipPath(
+                  clipper: CharacterCardClipper(),
+                  child:Hero(
+                    tag: 'character',
+                    child: Container(
+                      height:screenHeight * 0.6 ,
+                      width: 0.4 * screenHeight,
+                      decoration: BoxDecoration(
+                        gradient:LinearGradient(
+                          colors: [Colors.orange.shade200,Colors.orange.shade900],
+                          begin: Alignment.topRight,
+                          end: Alignment.bottomLeft
+                        )
+                      ),
                     ),
-                  ),
+                  )
+                )
+              ),
+              Align(
+                alignment:Alignment.topCenter,
+                child:Image.asset(index == 1 ? 'assets/images/Kevin_minions.png':'assets/images/Agnes_gru.png',height: screenHeight * 0.55 * _value)
+              ),
+              Container(
+                margin: EdgeInsets.only(left:100,bottom:100),
+                child:Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(index == 1 ? 'Hanson':'Jahn',style: AppTheme.heading,),
+                    Text('集美们 Click to read more',style: AppTheme.subHeading,)
+                  ],          
                 )
               )
-            ),
-            Align(
-              alignment:Alignment.topCenter,
-              child:Image.asset(index == 1 ? 'assets/images/Kevin_minions.png':'assets/images/Agnes_gru.png',height: screenHeight * 0.55,)
-            ),
-            Container(
-              margin: EdgeInsets.only(left:100,bottom:100),
-              child:Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(index == 1 ? 'Hanson':'Jahn',style: AppTheme.heading,),
-                  Text('集美们 Click to read more',style: AppTheme.subHeading,)
-                ],          
-              )
-            )
-          ],
-        ),
+            ],
+          );
+        },
+     
       ),
     );
   }

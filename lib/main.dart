@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/despicable_me/character_listing_screen.dart';
 import 'package:flutter_demo/hero/home.dart';
+import 'package:flutter_demo/tab_strip/tab_strip.dart';
 
 void main() => runApp(MyApp());
 
@@ -31,7 +32,8 @@ class MainPage extends StatelessWidget {
           spacing:10,
           children: <Widget>[
             _to('Hero动画',HeroHome(),context),
-            _to('卑鄙的我',CharacterListingScreen(),context),
+            _to('卑鄙的我动画',CharacterListingScreen(),context),
+            _to('选项卡动画',TabStrip(),context),
           ],
         )
       )

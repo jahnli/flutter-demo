@@ -108,7 +108,7 @@ class _FlightListState extends State<FlightList> {
             ),
             child: Text('55%',style: TextStyle(color: Colors.orange)),
           ),
-        )
+        ),
       ],
     );
   }

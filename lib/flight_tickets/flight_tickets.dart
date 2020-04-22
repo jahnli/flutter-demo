@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/despicable_me/style_guide.dart';
 import 'package:flutter_demo/flight_tickets/custom_shapeclipper.dart';
+import 'package:flutter_demo/flight_tickets/flight_list.dart';
 
 
 class FlightTickets extends StatefulWidget {
@@ -209,7 +209,12 @@ class _FlightTicketsState extends State<FlightTickets> {
                     suffixIcon: Material(
                       elevation: 3,
                       borderRadius: BorderRadius.circular(30),
-                      child: Icon(Icons.search),
+                      child: GestureDetector(
+                        onTap:(){
+                          Navigator.push(context,MaterialPageRoute(builder: (context) => FlightList(t:'xx')));
+                        },
+                        child: Icon(Icons.search),
+                      ),
                     ),
                   ),
                 ),

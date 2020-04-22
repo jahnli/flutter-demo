@@ -45,6 +45,9 @@ flutter:
   assets:
    - assets/images/Agnes_gru.png
    - assets/images/Kevin_minions.png
+   - assets/images/flight_tickets/athens.jpg
+   - assets/images/flight_tickets/lasvegas.jpg
+   - assets/images/flight_tickets/sydney.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

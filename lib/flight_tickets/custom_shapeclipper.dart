@@ -4,7 +4,6 @@ class CustomShapeClipper extends CustomClipper<Path>{
 
   @override
   getClip(Size size){
-    print(size);
     final Path path = Path();
     path.lineTo(0, size.height);
     var firstEndPoint = Offset(size.width * 0.5 , size.height - 30);

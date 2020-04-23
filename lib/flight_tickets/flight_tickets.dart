@@ -168,7 +168,12 @@ class _FlightTicketsState extends State<FlightTickets> {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Icon(Icons.location_on,size: 40,color: Colors.white),
+                  IconButton(
+                    icon: Icon(Icons.arrow_back_ios,size: 35,color: Colors.white),
+                    onPressed: (){
+                      Navigator.pop(context);
+                    }
+                  ),
                   SizedBox(width: 15),
                   PopupMenuButton(
                     onSelected: (val){
@@ -186,7 +191,7 @@ class _FlightTicketsState extends State<FlightTickets> {
                     child: Row(
                       children: <Widget>[
                         Text(_locations[_currentLocation],style: TextStyle(color: Colors.white,fontSize: 25)),
-                        Icon(Icons.arrow_drop_down,size: 60,color: Colors.white,)
+                        Icon(Icons.location_on,size: 35,color: Colors.white,)
                       ],
                     ),
                   ),

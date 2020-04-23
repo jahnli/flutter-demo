@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/custom_painter/custom_painter.dart';
 import 'package:flutter_demo/despicable_me/character_listing_screen.dart';
 import 'package:flutter_demo/flight_tickets/flight_tickets.dart';
 import 'package:flutter_demo/hero/home.dart';
@@ -29,7 +30,8 @@ class MainPage extends StatelessWidget {
     {"name":'Hero动画',"page":HeroHome(),"tags":['Hreo过渡','仿App stroe 卡片按压动画','动画']},
     {"name":'卑鄙的我',"page":CharacterListingScreen(),"tags":['自定义Clipper','Pageview过渡动画','Hero','自定义底部卡片']},
     {"name":'选项卡动画',"page":TabStrip()},
-    {"name":'广告投放页面',"page":FlightTickets(),"tags":['自定义Clipper','页面传参']}
+    {"name":'广告投放页面',"page":FlightTickets(),"tags":['自定义Clipper','页面传参']},
+    {"name":'CustomPainter',"page":CustomPainterDemo(),"tags":['','']},
   ];
 
   @override
@@ -87,7 +89,7 @@ class MainPage extends StatelessWidget {
             subtitle: ( tags != null && tags.length > 0) ? Wrap(
               spacing: 8,
               children: tags.map<Widget>((tag){
-                return Chip(label: Text(tag),labelPadding:EdgeInsets.symmetric(vertical: 0,horizontal: 8));
+                return tag != '' ? Chip(label: Text(tag),labelPadding:EdgeInsets.symmetric(vertical: 0,horizontal: 8)):Container();
               }).toList(),
             ):null
           ),

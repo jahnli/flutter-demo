@@ -3,14 +3,21 @@ import 'package:flutter_demo/flight_tickets/custom_shapeclipper.dart';
 
 class FlightList extends StatefulWidget {
 
-  final String t;
-FlightList({this.t});
+final String fromLocation,toLocation;
+
+FlightList({this.fromLocation,this.toLocation});
 
   @override
   _FlightListState createState() => _FlightListState();
 }
 
 class _FlightListState extends State<FlightList> {
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -150,9 +157,9 @@ class _FlightListState extends State<FlightList> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text('家私为家私私家私家私私',style: TextStyle(fontSize: 20)),
+                          Text(widget.fromLocation,style: TextStyle(fontSize: 20)),
                           Divider(color: Colors.grey,height: 20,),
-                          Text('牛妖可',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600)),
+                          Text(widget.toLocation,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600)),
                         ],
                       ),
                     ),

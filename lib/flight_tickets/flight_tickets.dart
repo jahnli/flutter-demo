@@ -21,9 +21,13 @@ class _FlightTicketsState extends State<FlightTickets> {
   int _currentLocation = 0;
   bool _isFlight = true;
 
+  TextEditingController _textEditController = TextEditingController();
   @override
   void initState() { 
     super.initState();
+    _textEditController = TextEditingController(
+      text: _locations[0],
+    );
   }
 
   @override
@@ -199,9 +203,7 @@ class _FlightTicketsState extends State<FlightTickets> {
                   color: Colors.white
                 ),
                 child: TextField(
-                  controller: TextEditingController(
-                    text: _locations[0],
-                  ),
+                  controller: _textEditController,
                   cursorColor:_appTheme.primaryColor,
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.symmetric(horizontal: 35,vertical: 14),
@@ -211,7 +213,7 @@ class _FlightTicketsState extends State<FlightTickets> {
                       borderRadius: BorderRadius.circular(30),
                       child: GestureDetector(
                         onTap:(){
-                          Navigator.push(context,MaterialPageRoute(builder: (context) => FlightList(t:'xx')));
+                          Navigator.push(context,MaterialPageRoute(builder: (context) => FlightList(fromLocation:_locations[_currentLocation],toLocation:_textEditController.text)));
                         },
                         child: Icon(Icons.search),
                       ),
@@ -223,9 +225,23 @@ class _FlightTicketsState extends State<FlightTickets> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  _chooseChip('Flights',_isFlight),
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        _isFlight = true;
+                      });
+                    },
+                    child: _chooseChip('Flights',_isFlight),
+                  ),
                   SizedBox(width:20),
-                  _chooseChip('Hotels',!_isFlight),
+                  GestureDetector(
+                    onTap: (){
+                        setState(() {
+                          _isFlight = false;
+                        });
+                    },
+                    child:_chooseChip('Hotels',!_isFlight),
+                  )
                 ],
               )
             ],
@@ -236,13 +252,7 @@ class _FlightTicketsState extends State<FlightTickets> {
   }
 
   Widget _chooseChip(text,isFlight){
-    return GestureDetector(
-      onTap: (){
-        setState(() {
-          _isFlight = !_isFlight;
-        });
-      },
-      child: Container(
+    return Container(
         padding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         decoration: BoxDecoration(
           color: isFlight ? Colors.white.withOpacity(0.15):null,
@@ -255,7 +265,6 @@ class _FlightTicketsState extends State<FlightTickets> {
             Text(text,style: TextStyle(color: Colors.white,fontSize: 20))
           ],
         ),
-      ),
     );
   }
 

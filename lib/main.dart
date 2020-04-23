@@ -73,6 +73,7 @@ class MainPage extends StatelessWidget {
     return Card(
       elevation: 0,
       child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 10,vertical: 6),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(width: 1,color: Colors.grey)

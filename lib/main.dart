@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/custom_painter/custom_painter.dart';
+import 'package:flutter_demo/custom_radius/custom_radius.dart';
 import 'package:flutter_demo/despicable_me/character_listing_screen.dart';
 import 'package:flutter_demo/flight_tickets/flight_tickets.dart';
 import 'package:flutter_demo/hero/home.dart';
@@ -27,11 +28,12 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
-    {"name":'Hero动画',"page":HeroHome(),"tags":['Hreo过渡','仿App stroe 卡片按压动画','动画']},
-    {"name":'卑鄙的我',"page":CharacterListingScreen(),"tags":['自定义Clipper','贝塞尔曲线','Pageview过渡动画','Hero','自定义底部卡片']},
-    {"name":'选项卡动画',"page":TabStrip()},
-    {"name":'广告投放页面',"page":FlightTickets(),"tags":['自定义Clipper','页面传参']},
-    {"name":'CustomPainter',"page":CustomPainterDemo(),"tags":['贝塞尔曲线','CustomPainter','Canvas']},
+    {"name":'自定义半径图',"page":CustomRadius(),"tags":['贝塞尔曲线','自定义半径图'],"date":'2020-04-23'},
+    {"name":'CustomPainter',"page":CustomPainterDemo(),"tags":['贝塞尔曲线','CustomPainter','Canvas'],"date":'2020-04-23'},
+    {"name":'广告投放页面',"page":FlightTickets(),"tags":['自定义Clipper','页面传参'],"date":'2020-04-21'},
+    {"name":'选项卡动画',"page":TabStrip(),"date":'2020-04-20'},
+    {"name":'卑鄙的我',"page":CharacterListingScreen(),"tags":['自定义Clipper','贝塞尔曲线','Pageview过渡动画','Hero','自定义底部卡片'],"date":'2020-04-15'},
+    {"name":'Hero动画',"page":HeroHome(),"tags":['Hreo过渡','仿App stroe 卡片按压动画','动画'],"date":'2020-04-13'},
   ];
 
   @override
@@ -51,7 +53,7 @@ class MainPage extends StatelessWidget {
       shrinkWrap: true,
       itemBuilder: (context,index){
         final item = _lists[index];
-        return  _to(item['name'],item['page'],item['tags'],context);
+        return  _to(name:item['name'],page:item['page'],date:item['date'],tags:item['tags'],context:context);
       },
       itemCount: _lists.length,
     );
@@ -71,7 +73,7 @@ class MainPage extends StatelessWidget {
     );
   } 
 
-  Widget _to(name,path,tags,context){
+  Widget _to({name,page,tags,context,date}){
     return Card(
       elevation: 0,
       child: Container(
@@ -82,9 +84,10 @@ class MainPage extends StatelessWidget {
         ),
         child: GestureDetector(
           onTap: (){
-            Navigator.push(context,MaterialPageRoute(builder: (context) =>path));
+            Navigator.push(context,MaterialPageRoute(builder: (context) => page));
           },
           child: ListTile(
+            trailing:Text(date),
             title: Text(name,style:TextStyle(fontSize: 18,color: Colors.orange.shade400)),
             subtitle: ( tags != null && tags.length > 0) ? Wrap(
               spacing: 8,

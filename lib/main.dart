@@ -28,10 +28,10 @@ class MainPage extends StatelessWidget {
 
   List _lists = [
     {"name":'Hero动画',"page":HeroHome(),"tags":['Hreo过渡','仿App stroe 卡片按压动画','动画']},
-    {"name":'卑鄙的我',"page":CharacterListingScreen(),"tags":['自定义Clipper','Pageview过渡动画','Hero','自定义底部卡片']},
+    {"name":'卑鄙的我',"page":CharacterListingScreen(),"tags":['自定义Clipper','贝塞尔曲线','Pageview过渡动画','Hero','自定义底部卡片']},
     {"name":'选项卡动画',"page":TabStrip()},
     {"name":'广告投放页面',"page":FlightTickets(),"tags":['自定义Clipper','页面传参']},
-    {"name":'CustomPainter',"page":CustomPainterDemo(),"tags":['','']},
+    {"name":'CustomPainter',"page":CustomPainterDemo(),"tags":['贝塞尔曲线','CustomPainter','Canvas']},
   ];
 
   @override

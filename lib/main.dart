@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/animated_toggle_button/animated_toggle_button.dart';
+import 'package:flutter_demo/collapse_sidebar/collapse_sidebar.dart';
 import 'package:flutter_demo/custom_painter/custom_painter.dart';
 import 'package:flutter_demo/despicable_me/character_listing_screen.dart';
 import 'package:flutter_demo/flight_tickets/flight_tickets.dart';
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch:Colors.blue,
         appBarTheme: AppBarTheme(
+          elevation: 0,
           color:Colors.orange.shade200,
         ),
       ),
@@ -28,6 +31,8 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
+    {"name":'Collapse SideBar',"page":CollapseSideBar(),"tags":['Drawer'],"date":'2020-04-24'},
+    {"name":'AnimatedToggleButton',"page":AnimatedToggleButton(),"tags":['渲染回调','获取元素大小','Animated'],"date":'2020-04-24'},
     {"name":'堆叠贝塞尔曲线',"page":StackBezierCurve(),"tags":['贝塞尔曲线'],"date":'2020-04-23'},
     {"name":'CustomPainter',"page":CustomPainterDemo(),"tags":['贝塞尔曲线','CustomPainter','Canvas'],"date":'2020-04-23'},
     {"name":'广告投放页面',"page":FlightTickets(),"tags":['自定义Clipper','页面传参'],"date":'2020-04-21'},

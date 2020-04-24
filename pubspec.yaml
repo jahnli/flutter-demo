@@ -48,6 +48,8 @@ flutter:
     - assets/images/flight_tickets/athens.jpg
     - assets/images/flight_tickets/lasvegas.jpg
     - assets/images/flight_tickets/sydney.jpeg
+    - assets/images/hero_qrcode/corners.png
+    - assets/images/hero_qrcode/qrcode.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

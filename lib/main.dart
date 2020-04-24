@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/custom_painter/custom_painter.dart';
-import 'package:flutter_demo/custom_radius/custom_radius.dart';
 import 'package:flutter_demo/despicable_me/character_listing_screen.dart';
 import 'package:flutter_demo/flight_tickets/flight_tickets.dart';
 import 'package:flutter_demo/hero/home.dart';
+import 'package:flutter_demo/stack_bezier_curve/stack_bezier_curve.dart';
 import 'package:flutter_demo/tab_strip/tab_strip.dart';
 
 void main() => runApp(MyApp());
@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch:Colors.blue,
         appBarTheme: AppBarTheme(
-          color:Colors.orange.shade200
-        )
+          color:Colors.orange.shade200,
+        ),
       ),
       debugShowCheckedModeBanner: false,
     );
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
-    {"name":'自定义半径图',"page":CustomRadius(),"tags":['贝塞尔曲线','自定义半径图'],"date":'2020-04-23'},
+    {"name":'堆叠贝塞尔曲线',"page":StackBezierCurve(),"tags":['贝塞尔曲线'],"date":'2020-04-23'},
     {"name":'CustomPainter',"page":CustomPainterDemo(),"tags":['贝塞尔曲线','CustomPainter','Canvas'],"date":'2020-04-23'},
     {"name":'广告投放页面',"page":FlightTickets(),"tags":['自定义Clipper','页面传参'],"date":'2020-04-21'},
     {"name":'选项卡动画',"page":TabStrip(),"date":'2020-04-20'},

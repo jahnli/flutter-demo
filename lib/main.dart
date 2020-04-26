@@ -101,7 +101,10 @@ class MainPage extends StatelessWidget {
             subtitle: ( tags != null && tags.length > 0) ? Wrap(
               spacing: 8,
               children: tags.map<Widget>((tag){
-                return tag != '' ? Chip(label: Text(tag),labelPadding:EdgeInsets.symmetric(vertical: 0,horizontal: 8)):Container();
+                return tag != '' ? Chip(
+                  avatar: CircleAvatar(backgroundColor: Colors.orange.shade200, child: Text(tag.toString().substring(0,1),style: TextStyle(fontSize: 12))),
+                  label: Text(tag),labelPadding:EdgeInsets.symmetric(vertical: 0,horizontal: 8)
+                ):Container();
               }).toList(),
             ):null
           ),

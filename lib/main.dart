@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/animated_toggle_button/animated_toggle_button.dart';
+import 'package:flutter_demo/animation_button/animation_button.dart';
 import 'package:flutter_demo/animation_carouse/animation_carouse.dart';
 import 'package:flutter_demo/collapse_sidebar/collapse_sidebar.dart';
 import 'package:flutter_demo/custom_painter/custom_painter.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
+    {"name":'Animation Button',"page":AnimationButton(),"tags":['Animation','Animation addListener'],"date":'2020-04-26'},
     {"name":'Animation Carouse',"page":AnimationCarouse(),"tags":['Animation'],"date":'2020-04-26'},
     {"name":'Collapse SideBar',"page":CollapseSideBar(),"tags":['Drawer'],"date":'2020-04-24'},
     {"name":'AnimatedToggleButton',"page":AnimatedToggleButton(),"tags":['渲染回调','获取元素大小','Animated'],"date":'2020-04-24'},

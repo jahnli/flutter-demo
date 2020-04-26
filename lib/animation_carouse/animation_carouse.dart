@@ -105,22 +105,25 @@ class _AnimationCarouseState extends State<AnimationCarouse> {
           offset: Offset(0, (-_val * 300) + 300),
           child: Opacity(
             opacity: _val,
-            child: Column(
-              children: <Widget>[
-                Text(
-                  _detailList[_currentPage]['title'],
-                  key:_titleKey,
-                  style: TextStyle(fontSize: 30)
-                ),
-                SizedBox(height: 20),
-                Container(
-                  width: _titleWidth,
-                  color: Colors.black,
-                  height: 3,
-                ),
-                SizedBox(height: 20),
-                Text(_detailList[_currentPage]['desc'],style: TextStyle(fontSize: 16)),
-              ],
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 8),
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    _detailList[_currentPage]['title'],
+                    key:_titleKey,
+                    style: TextStyle(fontSize: 30)
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    width: _titleWidth,
+                    color: Colors.black,
+                    height: 3,
+                  ),
+                  SizedBox(height: 20),
+                  Text(_detailList[_currentPage]['desc'],style: TextStyle(fontSize: 16)),
+                ],
+              ),
             ),
           ),
         );

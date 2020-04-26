@@ -22,7 +22,15 @@ class _CollapseSideBarState extends State<CollapseSideBar> {
         backgroundColor: Color(0xff272d34),
       ),
       drawer: _collapseSideBar(),
-      body: Container(),
+      body: Center(
+        child: MaterialButton(
+          color: Colors.blue,
+          onPressed: (){
+            Navigator.pop(context);
+          },
+          child: Text('Back',style: TextStyle(color: Colors.white)),
+        ),
+      ),
     );
   }
 

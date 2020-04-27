@@ -7,6 +7,7 @@ import 'package:flutter_demo/collapse_sidebar/collapse_sidebar.dart';
 import 'package:flutter_demo/custom_painter/custom_painter.dart';
 import 'package:flutter_demo/despicable_me/character_listing_screen.dart';
 import 'package:flutter_demo/flight_tickets/flight_tickets.dart';
+import 'package:flutter_demo/get_devices/get_decices.dart';
 import 'package:flutter_demo/hero/home.dart';
 import 'package:flutter_demo/stack_bezier_curve/stack_bezier_curve.dart';
 import 'package:flutter_demo/tab_strip/tab_strip.dart';
@@ -23,6 +24,10 @@ class MyApp extends StatelessWidget {
       title: 'MainApp',
       home: MainPage(),
       theme: ThemeData(
+        buttonTheme: ButtonThemeData(
+          textTheme:ButtonTextTheme.primary,
+          buttonColor: Colors.blue,
+        ),
         primarySwatch:Colors.blue,
         appBarTheme: AppBarTheme(
           elevation: 0,
@@ -37,6 +42,7 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
+    {"name":'设备相关',"page":GetDevices(),"tags":['设备相关信息','电池','创建快捷方式'],"date":'2020-04-27'},
     {"name":'Animation Button',"page":AnimationButton(),"tags":['Animation','Animation addListener'],"date":'2020-04-26'},
     {"name":'Animation Carouse',"page":AnimationCarouse(),"tags":['Animation'],"date":'2020-04-26'},
     {"name":'Collapse SideBar',"page":CollapseSideBar(),"tags":['Drawer'],"date":'2020-04-24'},

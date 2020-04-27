@@ -25,7 +25,6 @@ class _AnimationButtonState extends State<AnimationButton> with TickerProviderSt
     );
     _currentState = ButtonState.SHOW_ONLY_TEXT;
     _animationController.addListener((){
-      print(_animationController.value);
       double _val = _animationController.value;
       if( _val < 0.2 ){
         setState(() {

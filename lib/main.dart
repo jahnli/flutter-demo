@@ -63,6 +63,7 @@ class MainPage extends StatelessWidget {
 
   Widget _list(){
     return ListView.builder(
+      padding: EdgeInsets.all(0),
       shrinkWrap: true,
       itemBuilder: (context,index){
         final item = _lists[index];
@@ -90,7 +91,7 @@ class MainPage extends StatelessWidget {
     return Card(
       elevation: 0,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 10,vertical: 6),
+        margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(width: 1,color: Colors.grey)
@@ -125,9 +126,7 @@ class _CustomClipper extends CustomClipper<Path>{
   getClip(Size size){
     final Path path = Path();
     path.lineTo(0, size.height - 40);
-    var firstEndPoint = Offset(size.width * 0.5 , size.height - 40);
-    var firstControlPoint = Offset(size.width * 0.25, size.height);
-    path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy, firstEndPoint.dx,firstEndPoint.dy);
+    path.quadraticBezierTo(size.width * 0.25, size.height, size.width * 0.5,size.height - 40);
 
     var secondEndPoint = Offset(size.width  , size.height - 40);
     var secondControlPoint = Offset(size.width * 0.8, size.height - 80);

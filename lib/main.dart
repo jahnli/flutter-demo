@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_demo/amap_map_fluttify/amap_map_fluttify.dart';
 import 'package:flutter_demo/animated_toggle_button/animated_toggle_button.dart';
 import 'package:flutter_demo/animation_button/animation_button.dart';
 import 'package:flutter_demo/animation_carouse/animation_carouse.dart';
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
-    {"name":'高德地图获取定位信息',"page":AmapLocation(),"tags":[''],"date":'2020-04-27'},
+    {"name":'amap_map_fluttify',"page":AmapMapFluttify(),"tags":['高德地图'],"date":'2020-04-27'},
+    {"name":'amap_location',"page":AmapLocation(),"tags":['高德地图获取定位信息'],"date":'2020-04-27'},
     {"name":'设备相关',"page":GetDevices(),"tags":['设备相关信息','电池','创建快捷方式'],"date":'2020-04-27'},
     {"name":'Animation Button',"page":AnimationButton(),"tags":['Animation','Animation addListener'],"date":'2020-04-26'},
     {"name":'Animation Carouse',"page":AnimationCarouse(),"tags":['Animation'],"date":'2020-04-26'},

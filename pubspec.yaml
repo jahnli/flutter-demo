@@ -27,6 +27,7 @@ dependencies:
   device_info: ^0.4.2+2
   battery: ^0.3.1+10
   quick_actions: ^0.4.0+4
+  amap_location: ^0.2.0
 
 dev_dependencies:
   flutter_test:

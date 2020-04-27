@@ -11,6 +11,7 @@ import 'package:flutter_demo/get_devices/get_decices.dart';
 import 'package:flutter_demo/hero/home.dart';
 import 'package:flutter_demo/stack_bezier_curve/stack_bezier_curve.dart';
 import 'package:flutter_demo/tab_strip/tab_strip.dart';
+import 'package:flutter_demo/amap_location/amap_location.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
+    {"name":'高德地图获取定位信息',"page":AmapLocation(),"tags":[''],"date":'2020-04-27'},
     {"name":'设备相关',"page":GetDevices(),"tags":['设备相关信息','电池','创建快捷方式'],"date":'2020-04-27'},
     {"name":'Animation Button',"page":AnimationButton(),"tags":['Animation','Animation addListener'],"date":'2020-04-26'},
     {"name":'Animation Carouse',"page":AnimationCarouse(),"tags":['Animation'],"date":'2020-04-26'},

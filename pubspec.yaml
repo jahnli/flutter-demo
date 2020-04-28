@@ -31,6 +31,9 @@ dependencies:
   amap_map_fluttify: ^0.21.0
   permission_handler: ^5.0.0+hotfix.4
   decorated_flutter: ^0.12.5
+  image_picker: ^0.6.5+2
+  chewie: ^0.9.10
+  video_player: ^0.10.9+1
 
 dev_dependencies:
   flutter_test:

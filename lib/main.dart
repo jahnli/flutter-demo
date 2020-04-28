@@ -10,6 +10,7 @@ import 'package:flutter_demo/despicable_me/character_listing_screen.dart';
 import 'package:flutter_demo/flight_tickets/flight_tickets.dart';
 import 'package:flutter_demo/get_devices/get_decices.dart';
 import 'package:flutter_demo/hero/home.dart';
+import 'package:flutter_demo/image_picker/image_picker.dart';
 import 'package:flutter_demo/stack_bezier_curve/stack_bezier_curve.dart';
 import 'package:flutter_demo/tab_strip/tab_strip.dart';
 import 'package:flutter_demo/amap_location/amap_location.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
+    {"name":'image_picker',"page":ImagePickerDemo(),"tags":['拾取图像','相机拍摄'],"date":'2020-04-28'},
     {"name":'amap_map_fluttify',"page":AmapMapFluttify(),"tags":['高德地图'],"date":'2020-04-27'},
     {"name":'amap_location',"page":AmapLocation(),"tags":['高德地图获取定位信息'],"date":'2020-04-27'},
     {"name":'设备相关',"page":GetDevices(),"tags":['设备相关信息','电池','创建快捷方式'],"date":'2020-04-27'},

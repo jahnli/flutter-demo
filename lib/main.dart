@@ -8,7 +8,7 @@ import 'package:flutter_demo/collapse_sidebar/collapse_sidebar.dart';
 import 'package:flutter_demo/custom_painter/custom_painter.dart';
 import 'package:flutter_demo/despicable_me/character_listing_screen.dart';
 import 'package:flutter_demo/flight_tickets/flight_tickets.dart';
-import 'package:flutter_demo/get_devices/get_decices.dart';
+import 'package:flutter_demo/devices/decices.dart';
 import 'package:flutter_demo/hero/home.dart';
 import 'package:flutter_demo/image_picker/image_picker.dart';
 import 'package:flutter_demo/stack_bezier_curve/stack_bezier_curve.dart';

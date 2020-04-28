@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:device_info/device_info.dart';
 import 'package:battery/battery.dart';
 import 'package:quick_actions/quick_actions.dart';
+import 'package:wakelock/wakelock.dart';
 
 class GetDevices extends StatefulWidget {
   @override
@@ -9,14 +10,34 @@ class GetDevices extends StatefulWidget {
 }
 
 class _GetDevicesState extends State<GetDevices> {
+
+  bool _wakelock = false;
+
   @override
   void initState() { 
     super.initState();
-    
   }
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('设备相关'),),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            RaisedButton( onPressed: () => _getDevices(), child: Text('打印设备信息')),
+            RaisedButton( onPressed: () => _getBattery(), child: Text('打印电池')),
+            RaisedButton( onPressed: () => _quickActions(), child: Text('创建快捷方式（长按桌面图标查看）')),
+          ],
+        ),
+      ),
+    );
+  }
+  
 
-  // 创建快捷方式
+
+    // 创建快捷方式
   void _quickActions() async{
   final QuickActions quickActions = QuickActions();
     quickActions.initialize((shortcutType) {
@@ -63,21 +84,4 @@ class _GetDevicesState extends State<GetDevices> {
 
   
 
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('设备相关'),),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RaisedButton( onPressed: () => _getDevices(), child: Text('打印设备信息')),
-            RaisedButton( onPressed: () => _getBattery(), child: Text('打印电池')),
-            RaisedButton( onPressed: () => _quickActions(), child: Text('创建快捷方式（长按桌面图标查看）')),
-          ],
-        ),
-      ),
-    );
-  }
 }

@@ -4,6 +4,7 @@ import 'package:battery/battery.dart';
 import 'package:quick_actions/quick_actions.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:barcode_scan/barcode_scan.dart';
 
 
 class GetDevices extends StatefulWidget {
@@ -36,6 +37,7 @@ class _GetDevicesState extends State<GetDevices> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            RaisedButton( onPressed: () => _scan(), child: Text('条码扫描')),
             RaisedButton( onPressed: () => _detectionInter(), child: Text('检测网络状态')),
             RaisedButton( onPressed: () => _getDevices(), child: Text('打印设备信息')),
             RaisedButton( onPressed: () => _getBattery(), child: Text('打印电池')),
@@ -45,7 +47,29 @@ class _GetDevicesState extends State<GetDevices> {
       ),
     );
   }
-  
+
+  // 扫描
+  void _scan() async{
+    ScanOptions options = ScanOptions(
+       strings: {
+          "cancel": '取消',
+          "flash_on": '打开闪光灯',
+          "flash_off": '关闭闪光灯',
+        },
+        // 开始扫描时启用闪光灯
+        autoEnableFlash: false,
+    );
+    ScanResult result = await BarcodeScanner.scan(options: options);
+    Fluttertoast.showToast(
+      msg: '''
+        结果类型：${result.type}
+        条形码内容：he barcode format (as enum)${result.rawContent}
+        条码格式：${result.format}
+        未知格式被扫描，包含一个注释：${result.formatNote}
+      ''',
+      gravity: ToastGravity.CENTER,
+    );
+  }
 
   // 检测网络状态
   void _detectionInter()async{

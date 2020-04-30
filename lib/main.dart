@@ -48,7 +48,7 @@ class MainPage extends StatelessWidget {
     {"name":'image_picker',"page":ImagePickerDemo(),"tags":['拾取图像','相机拍摄'],"date":'2020-04-28'},
     {"name":'amap_map_fluttify',"page":AmapMapFluttify(),"tags":['高德地图'],"date":'2020-04-27'},
     {"name":'amap_location',"page":AmapLocation(),"tags":['高德地图获取定位信息'],"date":'2020-04-27'},
-    {"name":'设备相关',"page":GetDevices(),"tags":['设备相关信息','电池','创建快捷方式'],"date":'2020-04-27'},
+    {"name":'设备相关',"page":GetDevices(),"tags":['条码扫描','检测网络状态','设备相关信息','电池','创建快捷方式'],"date":'2020-04-27'},
     {"name":'Animation Button',"page":AnimationButton(),"tags":['Animation','Animation addListener'],"date":'2020-04-26'},
     {"name":'Animation Carouse',"page":AnimationCarouse(),"tags":['Animation'],"date":'2020-04-26'},
     {"name":'Collapse SideBar',"page":CollapseSideBar(),"tags":['Drawer'],"date":'2020-04-24'},

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:device_info/device_info.dart';
 import 'package:battery/battery.dart';
 import 'package:quick_actions/quick_actions.dart';
-import 'package:wakelock/wakelock.dart';
+import 'package:connectivity/connectivity.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
 
 class GetDevices extends StatefulWidget {
   @override
@@ -11,11 +13,19 @@ class GetDevices extends StatefulWidget {
 
 class _GetDevicesState extends State<GetDevices> {
 
-  bool _wakelock = false;
+  // 网络
+  var subscription;
 
   @override
   void initState() { 
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    Fluttertoast.cancel();
+    subscription.cancel();
+    super.dispose();
   }
 
   @override
@@ -26,6 +36,7 @@ class _GetDevicesState extends State<GetDevices> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            RaisedButton( onPressed: () => _detectionInter(), child: Text('检测网络状态')),
             RaisedButton( onPressed: () => _getDevices(), child: Text('打印设备信息')),
             RaisedButton( onPressed: () => _getBattery(), child: Text('打印电池')),
             RaisedButton( onPressed: () => _quickActions(), child: Text('创建快捷方式（长按桌面图标查看）')),
@@ -36,8 +47,30 @@ class _GetDevicesState extends State<GetDevices> {
   }
   
 
+  // 检测网络状态
+  void _detectionInter()async{
+      var connectivityResult = await (Connectivity().checkConnectivity());
+      if (connectivityResult == ConnectivityResult.mobile) {
+        Fluttertoast.showToast(
+          msg: "当前移动网络",
+          gravity: ToastGravity.CENTER,
+        );
+      } else if (connectivityResult == ConnectivityResult.wifi) {
+        Fluttertoast.showToast(
+          msg: "当前Wifi",
+          gravity: ToastGravity.CENTER,
+        );
+      }
+      // 初始化监听网络
+      subscription = Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
+          Fluttertoast.showToast(
+            msg: "当前是$result",
+            gravity: ToastGravity.CENTER,
+          );
+      });
+  }
 
-    // 创建快捷方式
+  // 创建快捷方式
   void _quickActions() async{
   final QuickActions quickActions = QuickActions();
     quickActions.initialize((shortcutType) {

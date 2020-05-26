@@ -4,6 +4,7 @@ import 'package:flutter_demo/amap_map_fluttify/amap_map_fluttify.dart';
 import 'package:flutter_demo/animated_toggle_button/animated_toggle_button.dart';
 import 'package:flutter_demo/animation_button/animation_button.dart';
 import 'package:flutter_demo/animation_carouse/animation_carouse.dart';
+import 'package:flutter_demo/app_upgrade/app_upgrade.dart';
 import 'package:flutter_demo/collapse_sidebar/collapse_sidebar.dart';
 import 'package:flutter_demo/custom_painter/custom_painter.dart';
 import 'package:flutter_demo/despicable_me/character_listing_screen.dart';
@@ -14,8 +15,14 @@ import 'package:flutter_demo/image_picker/image_picker.dart';
 import 'package:flutter_demo/stack_bezier_curve/stack_bezier_curve.dart';
 import 'package:flutter_demo/tab_strip/tab_strip.dart';
 import 'package:flutter_demo/amap_location/amap_location.dart';
+import 'package:flutter_downloader/flutter_downloader.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await FlutterDownloader.initialize(debug: true);
+
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -45,6 +52,7 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
+    {"name":'App更新',"page":AppUpgrade(),"tags":['检测版本号','服务器下载','App自动升级与安装'],"date":'2020-04-28'},
     {"name":'image_picker',"page":ImagePickerDemo(),"tags":['拾取图像','相机拍摄'],"date":'2020-04-28'},
     {"name":'amap_map_fluttify',"page":AmapMapFluttify(),"tags":['高德地图'],"date":'2020-04-27'},
     {"name":'amap_location',"page":AmapLocation(),"tags":['高德地图获取定位信息'],"date":'2020-04-27'},

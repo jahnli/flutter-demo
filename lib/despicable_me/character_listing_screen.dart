@@ -59,8 +59,8 @@ class _CharacterListingScreenState extends State<CharacterListingScreen> {
             child: PageView(
               controller: _pageController,
               children:<Widget>[
-                for (int i = 0; i < 2; i++) 
-                  CharacterWidget(index:i,pageController:_pageController,currentPage:i)
+                  CharacterWidget(index:1,pageController:_pageController,currentPage:1),
+                  CharacterWidget(index:2,pageController:_pageController,currentPage:2)
               ]
             ),
           )

@@ -12,6 +12,7 @@ import 'package:flutter_demo/flight_tickets/flight_tickets.dart';
 import 'package:flutter_demo/devices/decices.dart';
 import 'package:flutter_demo/hero/home.dart';
 import 'package:flutter_demo/image_picker/image_picker.dart';
+import 'package:flutter_demo/jpush/jpush.dart';
 import 'package:flutter_demo/stack_bezier_curve/stack_bezier_curve.dart';
 import 'package:flutter_demo/tab_strip/tab_strip.dart';
 import 'package:flutter_demo/amap_location/amap_location.dart';
@@ -52,7 +53,8 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
-    {"name":'App更新',"page":AppUpgrade(),"tags":['检测版本号','服务器下载','App自动升级与安装'],"date":'2020-04-28'},
+    {"name":'极光推送',"page":JPushPlugin(),"tags":['极光推送','jpush_flutter'],"date":'2020-05-27'},
+    {"name":'App更新',"page":AppUpgrade(),"tags":['检测版本号','服务器下载','App自动升级与安装'],"date":'2020-05-26'},
     {"name":'image_picker',"page":ImagePickerDemo(),"tags":['拾取图像','相机拍摄'],"date":'2020-04-28'},
     {"name":'amap_map_fluttify',"page":AmapMapFluttify(),"tags":['高德地图'],"date":'2020-04-27'},
     {"name":'amap_location',"page":AmapLocation(),"tags":['高德地图获取定位信息'],"date":'2020-04-27'},

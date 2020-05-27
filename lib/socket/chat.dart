@@ -8,6 +8,7 @@ class Chat extends StatefulWidget {
 class _ChatState extends State<Chat> {
 
   List _list = [];
+  bool _action = false;
   ScrollController _controller = ScrollController();
 
   @override
@@ -29,8 +30,7 @@ class _ChatState extends State<Chat> {
           Positioned(
             bottom: 0,
             child: Container(
-              height: 70,
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
               width: MediaQuery.of(context).size.width,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -58,8 +58,34 @@ class _ChatState extends State<Chat> {
                       ),
                       Icon(Icons.insert_emoticon,color: Colors.grey),
                       SizedBox(width: 10),
-                      Icon(Icons.add_circle,color: Colors.grey),
+                      GestureDetector(
+                        onTap: (){
+                          setState(() {
+                            _action = !_action;
+                          });
+                        },
+                        child: Icon(Icons.add_circle,color: Colors.grey),
+                      )
                     ],
+                  ),
+                  Visibility(
+                    visible: _action,
+                    child: Row(
+                      children: <Widget>[
+                        SizedBox(width: 8),
+                        IconButton(
+                          icon: Icon(Icons.photo_camera,color: Colors.grey),
+                          onPressed: (){
+
+                          },
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.photo_library,color: Colors.grey),
+                          onPressed: (){
+                          },
+                        ),
+                      ],
+                    ),
                   )
                 ],
               ),

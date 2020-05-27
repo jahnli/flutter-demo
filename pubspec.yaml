@@ -41,6 +41,7 @@ dependencies:
   flutter_downloader: ^1.4.4
   open_file: ^3.0.1
   jpush_flutter: ^0.5.5
+  socket_io_client: ^0.9.10
 
 dev_dependencies:
   flutter_test:

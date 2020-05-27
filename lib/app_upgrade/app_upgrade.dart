@@ -19,7 +19,7 @@ import 'package:flutter_downloader/flutter_downloader.dart';
 // path_provider       获取文件储存路径
 // flutter_downloader  flutter_downloader
 // open_file           打开文件
-
+// 示例代码需优化
 class AppUpgrade extends StatefulWidget {
   @override
   _AppUpgradeState createState() => _AppUpgradeState();

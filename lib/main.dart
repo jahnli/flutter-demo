@@ -17,6 +17,7 @@ import 'package:flutter_demo/stack_bezier_curve/stack_bezier_curve.dart';
 import 'package:flutter_demo/tab_strip/tab_strip.dart';
 import 'package:flutter_demo/amap_location/amap_location.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
+import 'package:flutter_localizations/flutter_localizations.dart'; 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,6 +35,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MainApp',
       home: MainPage(),
+      localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+          //此处
+          const Locale('zh', 'CH'),
+          const Locale('en', 'US'),
+      ],
       theme: ThemeData(
         buttonTheme: ButtonThemeData(
           textTheme:ButtonTextTheme.primary,

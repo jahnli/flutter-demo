@@ -56,7 +56,7 @@ class _SocketIoState extends State<SocketIo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(''),),
+      appBar: AppBar(title: Text('Socket Io'),),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: (){

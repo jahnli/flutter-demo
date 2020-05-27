@@ -13,6 +13,7 @@ import 'package:flutter_demo/devices/decices.dart';
 import 'package:flutter_demo/hero/home.dart';
 import 'package:flutter_demo/image_picker/image_picker.dart';
 import 'package:flutter_demo/jpush/jpush.dart';
+import 'package:flutter_demo/socket/chat.dart';
 import 'package:flutter_demo/socket/socket.io.dart';
 import 'package:flutter_demo/stack_bezier_curve/stack_bezier_curve.dart';
 import 'package:flutter_demo/tab_strip/tab_strip.dart';
@@ -64,6 +65,7 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
+    {"name":'聊天室',"page":Chat(),"tags":['socket.io','发送图片'],"date":'2020-05-27'},
     {"name":'SocketIo',"page":SocketIo(),"tags":['socket.io'],"date":'2020-05-27'},
     {"name":'极光推送',"page":JPushPlugin(),"tags":['极光推送','jpush_flutter'],"date":'2020-05-27'},
     {"name":'App更新',"page":AppUpgrade(),"tags":['检测版本号','服务器下载','App自动升级与安装'],"date":'2020-05-26'},

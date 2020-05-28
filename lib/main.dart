@@ -66,7 +66,7 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
-    {"name":'贝塞尔曲线实现添加购物车',"page":BezierCurveCart(),"tags":['贝塞尔曲线'],"date":'2020-05-28'},
+    {"name":'贝塞尔曲线实现添加购物车',"page":BezierCurveCart(),"tags":['贝塞尔曲线','获取元素位置'],"date":'2020-05-28'},
     {"name":'聊天室',"page":Chat(),"tags":['socket.io','发送图片'],"date":'2020-05-27'},
     {"name":'SocketIo',"page":SocketIo(),"tags":['socket.io'],"date":'2020-05-27'},
     {"name":'极光推送',"page":JPushPlugin(),"tags":['极光推送','jpush_flutter'],"date":'2020-05-27'},

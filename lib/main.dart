@@ -5,6 +5,7 @@ import 'package:flutter_demo/animated_toggle_button/animated_toggle_button.dart'
 import 'package:flutter_demo/animation_button/animation_button.dart';
 import 'package:flutter_demo/animation_carouse/animation_carouse.dart';
 import 'package:flutter_demo/app_upgrade/app_upgrade.dart';
+import 'package:flutter_demo/bezier_curve_cart/bezier_curve_cart.dart';
 import 'package:flutter_demo/collapse_sidebar/collapse_sidebar.dart';
 import 'package:flutter_demo/custom_painter/custom_painter.dart';
 import 'package:flutter_demo/despicable_me/character_listing_screen.dart';
@@ -65,6 +66,7 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
+    {"name":'贝塞尔曲线实现添加购物车',"page":BezierCurveCart(),"tags":['贝塞尔曲线'],"date":'2020-05-28'},
     {"name":'聊天室',"page":Chat(),"tags":['socket.io','发送图片'],"date":'2020-05-27'},
     {"name":'SocketIo',"page":SocketIo(),"tags":['socket.io'],"date":'2020-05-27'},
     {"name":'极光推送',"page":JPushPlugin(),"tags":['极光推送','jpush_flutter'],"date":'2020-05-27'},

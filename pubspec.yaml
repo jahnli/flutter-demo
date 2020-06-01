@@ -43,6 +43,7 @@ dependencies:
   jpush_flutter: ^0.5.5
   socket_io_client: ^0.9.10
   local_auth: ^0.6.2+3
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/game_list/context_heading.dart';
+import 'package:flutter_demo/game_list/custom_progress.dart';
 class GameListDetail extends StatefulWidget {
   final String tag;
   final String title;
@@ -11,8 +13,15 @@ class GameListDetail extends StatefulWidget {
 }
 
 class _GameListDetailState extends State<GameListDetail> {
+  List _list = [
+    {'name':'Time','progress':0.3},
+    {'name':'Mastery','progress':0.5},
+    {'name':'Rank','progress':0.7},
+    {'name':'Skill','progress':0.3},
+  ];
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body:Column(
         children: <Widget>[
@@ -22,7 +31,7 @@ class _GameListDetailState extends State<GameListDetail> {
               children: <Widget>[
                 Hero(
                   tag: widget.tag, 
-                  child: Image.network('${widget.img}',height: 260,fit: BoxFit.cover),
+                  child: Image.network('${widget.img}',height: 370,fit: BoxFit.cover),
                 ),
                 Column(
                   children: <Widget>[
@@ -60,7 +69,7 @@ class _GameListDetailState extends State<GameListDetail> {
                     Column(
                       children: <Widget>[
                         Text('${widget.title}',style: TextStyle(color: Colors.white,fontSize: 30)),
-                        Text('${widget.desc}',style: TextStyle(color: Colors.white.withOpacity(.8),fontSize: 20)),
+                        Text('${widget.desc}',style: TextStyle(color: Colors.white.withOpacity(.9),fontSize: 20)),
                         SizedBox(height: 30),
                         GestureDetector(
                           onTap: (){
@@ -87,16 +96,26 @@ class _GameListDetailState extends State<GameListDetail> {
           ),
           Expanded(
             flex: 3,
-            child: Container(
-              color: Colors.pink,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                ContextHeading(heading: 'Degree of love'),
+                for (int i = 0; i < _list.length; i++) 
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        alignment: Alignment.centerRight,
+                        width: 60,
+                        child: Text('${_list[i]['name']}'),
+                      ),
+                      SizedBox(width: 30),
+                      CustomProgress(progress: _list[i]['progress'],screenWidth:screenWidth),
+                    ],
+                  ),
+              ],
             ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              color: Colors.orange,
-            ),
-          ),
+          )
         ],
       ) ,
     );

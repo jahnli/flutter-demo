@@ -16,7 +16,7 @@ class _GameListState extends State<GameList> {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     List _gamesList = [
-      {'img':'http://img3.utuku.china.com/624x0/game/20200527/e5513eb0-8090-4caa-aced-9f9396f32359.jpg','title':'LOL','desc':'Riot Games','progress':0.8,'isOnLine':true},
+      {'img':'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591090365115&di=14545376e742b1c314ae58369616ba23&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn01%2F468%2Fw870h398%2F20180601%2Fe92a-hcikcev7844503.jpg','title':'LOL','desc':'Riot Games','progress':0.8,'isOnLine':true},
       {'img':'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591078264529&di=596395d511471ec97bddc7068e923a09&imgtype=0&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D1388123173%2C3271634528%26fm%3D214%26gp%3D0.jpg','title':'PUBG','desc':'蓝洞','progress':0.5,'isOnLine':true},
       {'img':'http://imgsrc.baidu.com/forum/w=580/sign=1995351d15dfa9ecfd2e561f52d0f754/66caa66eddc451da6a8d5beab2fd5266d0163253.jpg','title':'CF','desc':'腾讯游戏','progress':0.7,'isOnLine':true},
       {'img':'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591078983052&di=cfae4b1f2894265b3561973b028444c8&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F6fdfe53f528d347740f8e0d90614d92bb9d55e17.jpg','title':'梦三国','desc':'电魂','progress':0.6,'isOnLine':false},

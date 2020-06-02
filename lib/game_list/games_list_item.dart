@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/stadia/custom_progress.dart';
+import 'package:flutter_demo/game_list/custom_progress.dart';
 class GamesListItem extends StatelessWidget {
   final String image;
   final String title;

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/stadia/context_heading.dart';
-import 'package:flutter_demo/stadia/games_list_item.dart';
-import 'package:flutter_demo/stadia/rounded_image.dart';
+import 'package:flutter_demo/game_list/context_heading.dart';
+import 'package:flutter_demo/game_list/games_list_item.dart';
+import 'package:flutter_demo/game_list/rounded_image.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Stadia extends StatefulWidget {
+class GameList extends StatefulWidget {
   @override
-  _StadiaState createState() => _StadiaState();
+  _GameListState createState() => _GameListState();
 }
 
-class _StadiaState extends State<Stadia> {
+class _GameListState extends State<GameList> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;

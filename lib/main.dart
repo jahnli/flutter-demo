@@ -17,7 +17,7 @@ import 'package:flutter_demo/image_picker/image_picker.dart';
 import 'package:flutter_demo/jpush/jpush.dart';
 import 'package:flutter_demo/socket/socket.io.dart';
 import 'package:flutter_demo/stack_bezier_curve/stack_bezier_curve.dart';
-import 'package:flutter_demo/stadia/stadia.dart';
+import 'package:flutter_demo/game_list/stadia.dart';
 import 'package:flutter_demo/tab_strip/tab_strip.dart';
 import 'package:flutter_demo/amap_location/amap_location.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
-    {"name":'游戏列表UI',"page":Stadia(),"tags":['CustomProgress','AnimatedBuilder'],"date":'2020-06-01'},
+    {"name":'游戏列表',"page":GameList(),"tags":['CustomProgress','AnimatedBuilder'],"date":'2020-06-01'},
     {"name":'生物识别认证',"page":Biometrics(),"tags":['指纹识别'],"date":'2020-06-01'},
     {"name":'贝塞尔曲线实现添加购物车',"page":BezierCurveCart(),"tags":['贝塞尔曲线','获取元素位置'],"date":'2020-05-28'},
     {"name":'SocketIo',"page":SocketIo(),"tags":['socket.io'],"date":'2020-05-27'},

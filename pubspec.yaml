@@ -14,7 +14,7 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.8.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -43,6 +43,7 @@ dependencies:
   jpush_flutter: ^0.5.5
   socket_io_client: ^0.9.10
   local_auth: ^0.6.2+3
+  flutter_svg: ^0.17.4
   
 dev_dependencies:
   flutter_test:
@@ -72,6 +73,7 @@ flutter:
     - assets/images/animation_carouse/one.jpg
     - assets/images/animation_carouse/two.jpg
     - assets/images/animation_carouse/three.jpg
+    - assets/images/stadia/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

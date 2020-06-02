@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/game_list/context_heading.dart';
+import 'package:flutter_demo/game_list/detail.dart';
 import 'package:flutter_demo/game_list/games_list_item.dart';
 import 'package:flutter_demo/game_list/rounded_image.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,7 +16,7 @@ class _GameListState extends State<GameList> {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     List _gamesList = [
-      {'img':'http://image.namedq.com/uploads/20191223/18/1577097480-BjwNuxREhW.jpeg','title':'LOL','desc':'Riot Games','progress':0.8,'isOnLine':true},
+      {'img':'http://img3.utuku.china.com/624x0/game/20200527/e5513eb0-8090-4caa-aced-9f9396f32359.jpg','title':'LOL','desc':'Riot Games','progress':0.8,'isOnLine':true},
       {'img':'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591078264529&di=596395d511471ec97bddc7068e923a09&imgtype=0&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D1388123173%2C3271634528%26fm%3D214%26gp%3D0.jpg','title':'PUBG','desc':'蓝洞','progress':0.5,'isOnLine':true},
       {'img':'http://imgsrc.baidu.com/forum/w=580/sign=1995351d15dfa9ecfd2e561f52d0f754/66caa66eddc451da6a8d5beab2fd5266d0163253.jpg','title':'CF','desc':'腾讯游戏','progress':0.7,'isOnLine':true},
       {'img':'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591078983052&di=cfae4b1f2894265b3561973b028444c8&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F6fdfe53f528d347740f8e0d90614d92bb9d55e17.jpg','title':'梦三国','desc':'电魂','progress':0.6,'isOnLine':false},
@@ -40,17 +41,11 @@ class _GameListState extends State<GameList> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Icon(Icons.menu,color: Color(0xffa7a7a7)),
-                          Container(height: 10, child: VerticalDivider(color: Colors.grey[400])),
-                          GestureDetector(
-                            onTap: (){
-                              Navigator.pop(context);
-                            },
-                            child: Icon(Icons.home,color: Color(0xffa7a7a7),size: 22),
-                          )
-                        ]
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.pop(context);
+                        },
+                        child: Icon(Icons.home,color: Color(0xffa7a7a7),size: 22),
                       ),
                       Icon(Icons.search)
                     ],
@@ -88,7 +83,26 @@ class _GameListState extends State<GameList> {
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     itemBuilder: (context,index){
-                      return GamesListItem(image:_gamesList[index]['img'],title: _gamesList[index]['title'],description:_gamesList[index]['desc'],progress: _gamesList[index]['progress'],screenWidth:screenWidth);
+                      return GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => GameListDetail(
+                              tag:_gamesList[index]['desc'],
+                              img:_gamesList[index]['img'],
+                              title:_gamesList[index]['title'],
+                              desc:_gamesList[index]['desc'],
+                          )));
+                        },
+                        child: Hero(
+                          tag: _gamesList[index]['title'], 
+                          child: GamesListItem(
+                            image:_gamesList[index]['img'],
+                            title: _gamesList[index]['title'],
+                            description:_gamesList[index]['desc'],
+                            progress: _gamesList[index]['progress'],
+                            screenWidth:screenWidth
+                          )
+                        )
+                      );
                     },
                     itemCount: _gamesList.length,
                   ),
@@ -97,10 +111,24 @@ class _GameListState extends State<GameList> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,         
                     children: <Widget>[
                       for (int i = 0; i < _gamesList.length; i++)
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 5,vertical: 20),
-                          child: RoundedImage(imgPath:_gamesList[i]['img'],showRanking: true,ranking: i + 1,isOnLine: _gamesList[i]['isOnLine']),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => GameListDetail(
+                              tag:_gamesList[i]['desc'],
+                              img:_gamesList[i]['img'],
+                              title:_gamesList[i]['title'],
+                              desc:_gamesList[i]['desc'],
+                            )));
+                          },
+                          child: Hero(
+                            tag: _gamesList[i]['desc'], 
+                            child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 5,vertical: 20),
+                              child: RoundedImage(imgPath:_gamesList[i]['img'],showRanking: true,ranking: i + 1,isOnLine: _gamesList[i]['isOnLine']),
+                            )
+                          ),
                         )
+                        
                     ],
                   ),
                 ],

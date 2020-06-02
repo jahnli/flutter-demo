@@ -15,7 +15,6 @@ import 'package:flutter_demo/devices/decices.dart';
 import 'package:flutter_demo/hero/home.dart';
 import 'package:flutter_demo/image_picker/image_picker.dart';
 import 'package:flutter_demo/jpush/jpush.dart';
-import 'package:flutter_demo/socket/chat.dart';
 import 'package:flutter_demo/socket/socket.io.dart';
 import 'package:flutter_demo/stack_bezier_curve/stack_bezier_curve.dart';
 import 'package:flutter_demo/tab_strip/tab_strip.dart';
@@ -69,7 +68,6 @@ class MainPage extends StatelessWidget {
   List _lists = [
     {"name":'生物识别认证',"page":Biometrics(),"tags":['指纹识别'],"date":'2020-06-01'},
     {"name":'贝塞尔曲线实现添加购物车',"page":BezierCurveCart(),"tags":['贝塞尔曲线','获取元素位置'],"date":'2020-05-28'},
-    {"name":'聊天室',"page":Chat(),"tags":['socket.io','发送图片'],"date":'2020-05-27'},
     {"name":'SocketIo',"page":SocketIo(),"tags":['socket.io'],"date":'2020-05-27'},
     {"name":'极光推送',"page":JPushPlugin(),"tags":['极光推送','jpush_flutter'],"date":'2020-05-27'},
     {"name":'App更新',"page":AppUpgrade(),"tags":['检测版本号','服务器下载','App自动升级与安装'],"date":'2020-05-26'},

@@ -16,6 +16,7 @@ import 'package:flutter_demo/game_list/game_list.dart';
 import 'package:flutter_demo/hero/home.dart';
 import 'package:flutter_demo/image_picker/image_picker.dart';
 import 'package:flutter_demo/jpush/jpush.dart';
+import 'package:flutter_demo/share/share.dart';
 import 'package:flutter_demo/socket/socket.io.dart';
 import 'package:flutter_demo/stack_bezier_curve/stack_bezier_curve.dart';
 import 'package:flutter_demo/tab_strip/tab_strip.dart';

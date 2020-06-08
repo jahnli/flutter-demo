@@ -17,6 +17,7 @@ import 'package:flutter_demo/hero/home.dart';
 import 'package:flutter_demo/image_picker/image_picker.dart';
 import 'package:flutter_demo/jpush/jpush.dart';
 import 'package:flutter_demo/sidebar_animation/sidebar_animation.dart';
+import 'package:flutter_demo/smart_home/smart_home.dart';
 import 'package:flutter_demo/socket/socket.io.dart';
 import 'package:flutter_demo/stack_bezier_curve/stack_bezier_curve.dart';
 import 'package:flutter_demo/tab_strip/tab_strip.dart';
@@ -69,7 +70,8 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
-    {"name":'侧边栏',"page":SidebarAnimation(),"tags":['Sidebar','Animation'],"date":'2020-06-08'},
+    {"name":'智能家居',"page":SmartHome(),"tags":['自定义Clipper','AnimationContainer'],"date":'2020-06-08'},
+    {"name":'侧边栏',"page":SidebarAnimation(),"tags":['CustomSidebar','Stream','Animation','贝塞尔曲线'],"date":'2020-06-08'},
     {"name":'Theming',"page":Theming(),"tags":['Theme','暗黑模式'],"date":'2020-06-04'},
     {"name":'游戏列表',"page":GameList(),"tags":['CustomProgress','AnimatedBuilder'],"date":'2020-06-01'},
     {"name":'生物识别认证',"page":Biometrics(),"tags":['指纹识别'],"date":'2020-06-01'},

@@ -113,7 +113,7 @@ class MainPage extends StatelessWidget {
       shrinkWrap: true,
       itemBuilder: (context,index){
         final item = _lists[index];
-        return  _to(name:item['name'],page:item['page'],date:item['date'],tags:item['tags'],context:context);
+        return  _to(name:item['name'],page:item['page'],date:item['date'],tags:item['tags'],context:context,index:index);
       },
       itemCount: _lists.length,
     );
@@ -133,7 +133,7 @@ class MainPage extends StatelessWidget {
     );
   } 
 
-  Widget _to({name,page,tags,context,date}){
+  Widget _to({name,page,tags,context,date,index}){
     return Card(
       elevation: 0,
       child: Container(
@@ -148,7 +148,7 @@ class MainPage extends StatelessWidget {
           },
           child: ListTile(
             trailing:Text(date),
-            title: Text(name,style:TextStyle(fontSize: 18,color: Colors.orange.shade400)),
+            title: Text('${_lists.length-index}、$name',style:TextStyle(fontSize: 18,color: Colors.orange.shade400)),
             subtitle: ( tags != null && tags.length > 0) ? Wrap(
               spacing: 8,
               children: tags.map<Widget>((tag){

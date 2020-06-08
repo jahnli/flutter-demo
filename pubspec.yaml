@@ -44,8 +44,8 @@ dependencies:
   socket_io_client: ^0.9.10
   local_auth: ^0.6.2+3
   flutter_svg: ^0.17.4
-  rxdart: ^0.24.1
-  
+  app_settings: ^4.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -5,6 +5,7 @@ import 'package:quick_actions/quick_actions.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:barcode_scan/barcode_scan.dart';
+import 'package:app_settings/app_settings.dart';
 
 
 class GetDevices extends StatefulWidget {
@@ -41,6 +42,7 @@ class _GetDevicesState extends State<GetDevices> {
             RaisedButton( onPressed: () => _detectionInter(), child: Text('检测网络状态')),
             RaisedButton( onPressed: () => _getDevices(), child: Text('打印设备信息')),
             RaisedButton( onPressed: () => _getBattery(), child: Text('打印电池')),
+            RaisedButton( onPressed: () => AppSettings.openBluetoothSettings(), child: Text('打开蓝牙设置')),
             RaisedButton( onPressed: () => _quickActions(), child: Text('创建快捷方式（长按桌面图标查看）')),
           ],
         ),

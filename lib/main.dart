@@ -8,6 +8,7 @@ import 'package:flutter_demo/app_upgrade/app_upgrade.dart';
 import 'package:flutter_demo/bezier_curve_cart/bezier_curve_cart.dart';
 import 'package:flutter_demo/biometrics/biometrics.dart';
 import 'package:flutter_demo/collapse_sidebar/collapse_sidebar.dart';
+import 'package:flutter_demo/custom_dropdown/custom_dropdown.dart';
 import 'package:flutter_demo/custom_painter/custom_painter.dart';
 import 'package:flutter_demo/despicable_me/character_listing_screen.dart';
 import 'package:flutter_demo/flight_tickets/flight_tickets.dart';
@@ -70,6 +71,7 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
+    {"name":'下拉菜单',"page":CustomDropDown(),"tags":['Custom Dropdown','获取元素位置大小'],"date":'2020-06-09'},
     {"name":'智能家居',"page":SmartHome(),"tags":['自定义Clipper','AnimationContainer'],"date":'2020-06-08'},
     {"name":'侧边栏',"page":SidebarAnimation(),"tags":['CustomSidebar','Stream','Animation','贝塞尔曲线'],"date":'2020-06-08'},
     {"name":'Theming',"page":Theming(),"tags":['Theme','暗黑模式'],"date":'2020-06-04'},

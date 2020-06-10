@@ -28,8 +28,6 @@ dependencies:
   device_info: ^0.4.2+2
   battery: ^0.3.1+10
   quick_actions: ^0.4.0+4
-  amap_location: ^0.2.0
-  amap_map_fluttify: ^0.21.0
   permission_handler: ^5.0.0+hotfix.4
   decorated_flutter: ^0.12.5
   image_picker: ^0.6.5+2

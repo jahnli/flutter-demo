@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_demo/amap_map_fluttify/amap_map_fluttify.dart';
 import 'package:flutter_demo/animated_toggle_button/animated_toggle_button.dart';
 import 'package:flutter_demo/animation_button/animation_button.dart';
 import 'package:flutter_demo/animation_carouse/animation_carouse.dart';
@@ -22,8 +21,8 @@ import 'package:flutter_demo/smart_home/smart_home.dart';
 import 'package:flutter_demo/socket/socket.io.dart';
 import 'package:flutter_demo/stack_bezier_curve/stack_bezier_curve.dart';
 import 'package:flutter_demo/tab_strip/tab_strip.dart';
-import 'package:flutter_demo/amap_location/amap_location.dart';
 import 'package:flutter_demo/theming/theming.dart';
+import 'package:flutter_demo/train_and_game/train_and_game.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_localizations/flutter_localizations.dart'; 
 
@@ -71,6 +70,7 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
+    {"name":'游戏训练',"page":TrainAndGame(),"tags":['Custom BottomNavigationBar','获取元素位置大小'],"date":'2020-06-10'},
     {"name":'下拉菜单',"page":CustomDropDown(),"tags":['Custom Dropdown','获取元素位置大小'],"date":'2020-06-09'},
     {"name":'智能家居',"page":SmartHome(),"tags":['自定义Clipper','AnimationContainer'],"date":'2020-06-08'},
     {"name":'侧边栏',"page":SidebarAnimation(),"tags":['CustomSidebar','Stream','Animation','贝塞尔曲线'],"date":'2020-06-08'},
@@ -82,8 +82,6 @@ class MainPage extends StatelessWidget {
     {"name":'极光推送',"page":JPushPlugin(),"tags":['极光推送','jpush_flutter'],"date":'2020-05-27'},
     {"name":'App更新',"page":AppUpgrade(),"tags":['检测版本号','服务器下载','App自动升级与安装'],"date":'2020-05-26'},
     {"name":'image_picker',"page":ImagePickerDemo(),"tags":['拾取图像','相机拍摄'],"date":'2020-04-28'},
-    {"name":'amap_map_fluttify',"page":AmapMapFluttify(),"tags":['高德地图'],"date":'2020-04-27'},
-    {"name":'amap_location',"page":AmapLocation(),"tags":['高德地图获取定位信息'],"date":'2020-04-27'},
     {"name":'设备相关',"page":GetDevices(),"tags":['条码扫描','检测网络状态','设备相关信息','电池','创建快捷方式'],"date":'2020-04-27'},
     {"name":'Animation Button',"page":AnimationButton(),"tags":['Animation','Animation addListener'],"date":'2020-04-26'},
     {"name":'Animation Carouse',"page":AnimationCarouse(),"tags":['Animation'],"date":'2020-04-26'},

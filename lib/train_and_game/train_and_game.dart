@@ -82,7 +82,15 @@ class _TrainAndGameState extends State<TrainAndGame> {
                       ],
                     ),
                     SizedBox(height: 5),
-                    _progress(_height * 0.1,_height * 0.1)
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        _progress(_height * 0.1,_height * 0.1,'52%','3251场',0.52),
+                        _progress(_height * 0.1,_height * 0.1,'70%','峡谷',0.7),
+                        _progress(_height * 0.1,_height * 0.1,'22%','云顶之弈',0.22),
+                        _progress(_height * 0.1,_height * 0.1,'8%','其他',0.08),
+                      ],
+                    )
                   ],
                 ),
               ),
@@ -159,18 +167,18 @@ class _TrainAndGameState extends State<TrainAndGame> {
     );
   }
 
-  Widget _progress(width,height){
+  Widget _progress(width,height,title,subTitle,val){
     return CustomPaint(
-      painter: _Painter(progress:0.52),
+      painter: _Painter(progress:val),
       child: Container(
         height: height,
         width:width ,
         child: Column(
           mainAxisAlignment:MainAxisAlignment.center,
           children: [
-            Text('3251场',style: TextStyle(color: Color(0xff200087).withOpacity(.5),fontSize: 12),),
+            Text('$subTitle',style: TextStyle(color: Color(0xff200087).withOpacity(.5),fontSize: 12),),
             SizedBox(height: 5),
-            Text('52%',style: TextStyle(fontSize: 16,color: Color(0xff200087)),),
+            Text('$title',style: TextStyle(fontSize: 16,color: Color(0xff200087)),),
           ],
         ),
       ),
@@ -236,7 +244,7 @@ class _Painter extends CustomPainter {
     canvas.drawArc(
         Rect.fromCircle(center: center,radius: size.width / 2), 
         math.radians(-90),
-        math.radians(-progress * 360), 
+        math.radians(progress * 360), 
         false,
         paint
       );

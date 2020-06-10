@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
 
   List _lists = [
-    {"name":'游戏训练',"page":TrainAndGame(),"tags":['Custom BottomNavigationBar','获取元素位置大小'],"date":'2020-06-10'},
+    {"name":'游戏训练',"page":TrainAndGame(),"tags":['Custom BottomNavigationBar','自定义环形图'],"date":'2020-06-10'},
     {"name":'下拉菜单',"page":CustomDropDown(),"tags":['Custom Dropdown','获取元素位置大小'],"date":'2020-06-09'},
     {"name":'智能家居',"page":SmartHome(),"tags":['自定义Clipper','AnimationContainer'],"date":'2020-06-08'},
     {"name":'侧边栏',"page":SidebarAnimation(),"tags":['CustomSidebar','Stream','Animation','贝塞尔曲线'],"date":'2020-06-08'},
